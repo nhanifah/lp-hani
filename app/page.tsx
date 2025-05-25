@@ -100,7 +100,7 @@ export default function Portfolio() {
             <span className="text-xl font-bold">NH</span>
           </div>
           <nav className="hidden md:flex gap-6">
-            {["about", "research", "skills", "publications", "contact"].map((section) => (
+            {["about", "portofolio", "skills", "publications", "contact"].map((section) => (
               <Link
                 key={section}
                 href={`#${section}`}
@@ -321,7 +321,7 @@ export default function Portfolio() {
                 </Accordion>
 
                 <div className="flex gap-4 pt-4">
-                  <Link href="#detail-porto">
+                  <Link href="#portofolio">
                     <Button className="bg-[#2c5e2e] hover:bg-[#1f4521] transition-all duration-300">
                       View Portofolio
                       <ChevronRight className="ml-2 h-4 w-4" />
@@ -354,7 +354,7 @@ export default function Portfolio() {
       </section>
 
       {/* Research/Projects Section */}
-      <section id="detail-porto" className="bg-[#f8faf5] py-20 md:py-28">
+      <section id="portofolio" className="bg-[#f8faf5] py-20 md:py-28">
         <div className="container">
           <div className="flex items-center mb-8">
             <div className="h-px flex-1 bg-[#e0e7d7]"></div>
