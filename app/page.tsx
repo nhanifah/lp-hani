@@ -31,12 +31,29 @@ import { ResearchChart } from "@/components/research-chart"
 import { BiodiversityMap } from "@/components/biodiversity-map"
 import { PublicationsList } from "@/components/publications-list"
 import { EducationTimeline } from "@/components/education-timeline"
+import ProjectDetailModal, { ProjectDetailType } from "../components/ui/project-detail-modal"
+
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero")
   const [scrollY, setScrollY] = useState(0)
   const heroRef = useRef(null)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
+  const [selectedProject, setSelectedProject] = useState<ProjectDetailType | null>(null)
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = form.name.value;
+    const email = form.email.value;
+    const subject = form.subject.value;
+    const message = form.message.value;
+
+    const url = `https://docs.google.com/forms/d/e/1FAIpQLSfdrSW_I6P22iHxeEBHSMB8QHSmU2ZyNr0CrSB3N-Fa3RRSRQ/viewform?entry.1806414786=${encodeURIComponent(name)}&entry.1577174129=${encodeURIComponent(email)}&entry.162820519=${encodeURIComponent(subject)}&entry.847912545=${encodeURIComponent(message)}`;
+
+    window.location.href = url; // Not ideal, tapi kalau Google Form, oke aja
+  };
 
   useEffect(() => {
     setIsLoaded(true)
@@ -67,6 +84,12 @@ export default function Portfolio() {
   // Parallax effect calculation for hero section
   const parallaxOffset = scrollY * 0.4
   const opacityValue = Math.max(1 - scrollY * 0.002, 0)
+
+  // Helper to open modal with project data
+  const handleViewDetails = (project: ProjectDetailType) => {
+    setSelectedProject(project)
+    setModalOpen(true)
+  }
 
   return (
     <div className="min-h-screen bg-[#f8faf5]">
@@ -344,7 +367,7 @@ export default function Portfolio() {
           </p>
 
           <Tabs defaultValue="featured" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8">
+            {/* <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8">
               <TabsTrigger value="featured" className="data-[state=active]:bg-[#2c5e2e] data-[state=active]:text-white">
                 Featured
               </TabsTrigger>
@@ -357,7 +380,7 @@ export default function Portfolio() {
               >
                 Completed
               </TabsTrigger>
-            </TabsList>
+            </TabsList> */}
 
             <TabsContent value="featured" className="mt-0">
               <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -366,12 +389,20 @@ export default function Portfolio() {
                   <div className="aspect-video relative overflow-hidden">
                     <Image
                       src="/porto/porto_1.jpeg?height=300&width=500"
-                      alt="Mangrove Ecosystem Research"
+                      alt="Ecosystem Analysis"
                       fill
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white">
+                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
+                        imageUrl: "/porto/porto_1.jpeg",
+                        title: "Field Survey, Sampling, and Data Collection",
+                        date: "2020-2023",
+                        location: "Padang, West Sumatra, Indonesia",
+                        description: "A fieldwork activity focused on environmental data collection and research. Field data collection includes physicochemical parameters such as temperature, salinity, pH, brightness, BOD₅, DO, free CO₂, TSS, phosphate, and nitrate.",
+                        category: "Ecosystem Analysis",
+                        tags: ["Carbon Cycling", "Remote Sensing", "Climate Change"]
+                      })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />
                       </Button>
@@ -405,7 +436,7 @@ export default function Portfolio() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Users className="h-4 w-4 text-[#2c5e2e]" />
-                      <span className="text-xs text-[#4a6b4d]">5 Collaborators</span>
+                      <span className="text-xs text-[#4a6b4d]">10 Collaborators</span>
                     </div>
                   </CardFooter>
                 </Card>
@@ -420,7 +451,15 @@ export default function Portfolio() {
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white">
+                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
+                        imageUrl: "/porto/porto_2.png",
+                        title: "Harmful Algal Blooms (HABs) Species",
+                        date: "2021-Present",
+                        location: "Padang, West Sumatra, Indonesia",
+                        description: "The discovery of 25 phytoplankton species in the coastal waters of Padang, West Sumatra, that have the potential to cause Harmful Algal Blooms (HABs) represents a crucial step in understanding the dynamics and ecological impacts of HABs. By providing detailed insights into species composition and bloom behavior, this study supports sustainable marine management and the development of early warning strategies for environmental protection.",
+                        category: "Marine Ecology",
+                        tags: ["Resilience", "Marine Conservation", "Biodiversity"]
+                      })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />
                       </Button>
@@ -456,7 +495,7 @@ export default function Portfolio() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Users className="h-4 w-4 text-[#2c5e2e]" />
-                      <span className="text-xs text-[#4a6b4d]">7 Collaborators</span>
+                      <span className="text-xs text-[#4a6b4d]">4 Collaborators</span>
                     </div>
                   </CardFooter>
                 </Card>
@@ -471,7 +510,15 @@ export default function Portfolio() {
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white">
+                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
+                        imageUrl: "/porto/porto_3.jpeg",
+                        title: "Spatial Distribution Heatmap",
+                        date: "2019-2022",
+                        location: "Padang, West Sumatra, Indonesia",
+                        description: "Harnessing the power of Quantum GIS (QGIS) to create dynamic heatmaps for environmental analysis—visualizing and revealing the complex spatial patterns of biodiversity. This innovative approach offers deeper insights into the distribution of harmful algal bloom (HAB) species, paving the way for smarter ecological monitoring and management.",
+                        category: "Digital Mapping",
+                        tags: ["Reforestation", "Succession", "Ecosystem Services"]
+                      })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />
                       </Button>
@@ -520,7 +567,15 @@ export default function Portfolio() {
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white">
+                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
+                        imageUrl: "/porto/porto_4.jpeg",
+                        title: "Biodiversity Identification Process",
+                        date: "2019-2023",
+                        location: "Padang, West Sumatra, Indonesia",
+                        description: "As part of the biodiversity identification process in the laboratory, I conducted plankton species analysis using a microscope. This activity aimed to observe and classify morphological characteristics of each species, serving as a scientific basis for assessing aquatic ecosystem conditions and supporting accurate environmental monitoring efforts.",
+                        category: "Restoration Ecology",
+                        tags: ["Reforestation", "Succession", "Ecosystem Services"]
+                      })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />
                       </Button>
@@ -569,7 +624,15 @@ export default function Portfolio() {
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white">
+                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
+                        imageUrl: "/porto/porto_5.jpeg",
+                        title: "Student Success Intern",
+                        date: "2024-2025",
+                        location: "Tangerang, Indonesia",
+                        description: "Managed educational programs in Learning and Development through active supervision and teamwork. Analyzed learning outcomes and mentor performance to drive improvement and ensure customer satisfaction. Maintained clear communication to support smooth program execution and a positive learning experience.",
+                        category: "Learning and Development",
+                        tags: ["Reforestation", "Succession", "Ecosystem Services"]
+                      })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />
                       </Button>
@@ -618,7 +681,15 @@ export default function Portfolio() {
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white">
+                      <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
+                        imageUrl: "/porto/porto_6.png",
+                        title: "Video Editor",
+                        date: "2025-Present",
+                        location: "Jakarta, Indonesia",
+                        description: "Oversee the production of educational and promotional videos, including editing visuals, audio, and animations. I ensure the content effectively supports learning goals and marketing strategies. My work focuses on creating engaging videos that educate and captivate audiences.",
+                        category: "Creative",
+                        tags: ["Reforestation", "Succession", "Ecosystem Services"]
+                      })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />
                       </Button>
@@ -652,7 +723,7 @@ export default function Portfolio() {
                     </div>
                     <div className="flex items-center gap-2">
                       <Users className="h-4 w-4 text-[#2c5e2e]" />
-                      <span className="text-xs text-[#4a6b4d]">4 Collaborators</span>
+                      <span className="text-xs text-[#4a6b4d]">3 Collaborators</span>
                     </div>
                   </CardFooter>
                 </Card>
@@ -767,25 +838,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Research Impact Visualization */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <h3 className="text-xl font-semibold text-[#2c5e2e] mb-8 text-center">Research Impact</h3>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-[#f8faf5] p-6 rounded-xl">
-              <h4 className="text-lg font-medium text-[#2c5e2e] mb-4">Publication Metrics</h4>
-              <ResearchChart />
-            </div>
-
-            <div className="bg-[#f8faf5] p-6 rounded-xl">
-              <h4 className="text-lg font-medium text-[#2c5e2e] mb-4">Biodiversity Assessment Sites</h4>
-              <BiodiversityMap />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Publications Section */}
       <section id="publications" className="py-20 md:py-28">
         <div className="container">
@@ -804,7 +856,7 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="bg-[#f8faf5] py-20 md:py-28">
+      <section id="skills" className="bg-[#ffffff] py-20 md:py-28">
         <div className="container">
           <div className="flex items-center mb-8">
             <div className="h-px flex-1 bg-[#e0e7d7]"></div>
@@ -817,7 +869,7 @@ export default function Portfolio() {
             complex environmental challenges.
           </p>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
+          {/* <div className="mt-12 grid gap-8 md:grid-cols-2">
             <div className="space-y-8">
               <div>
                 <h3 className="text-lg font-semibold text-[#2c5e2e] mb-4 flex items-center">
@@ -969,88 +1021,88 @@ export default function Portfolio() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-xl border border-[#e0e7d7] bg-white p-6 transition-all hover:shadow-md hover:translate-y-[-5px]">
+            <div className="rounded-xl border border-[#e0e7d7] bg-[#f8faf5] p-6 transition-all hover:shadow-md hover:translate-y-[-5px]">
               <h3 className="text-lg font-semibold text-[#2c5e2e] mb-4">Specialized Techniques</h3>
               <ul className="space-y-3 text-[#4a6b4d]">
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Environmental DNA (eDNA) Analysis</span>
+                  <span>Environmental Analysis</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Acoustic Monitoring</span>
+                  <span>Ecological Monitoring</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Camera Trap Deployment</span>
+                  <span>Water Quality Monitoring</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Drone-based Vegetation Mapping</span>
-                </li>
+                  <span>Environmental Impact Assessment</span>
+                </li> 
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Stable Isotope Analysis</span>
+                  <span>Scientific Report & Visualization</span>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-xl border border-[#e0e7d7] bg-white p-6 transition-all hover:shadow-md hover:translate-y-[-5px]">
+            <div className="rounded-xl border border-[#e0e7d7] bg-[#f8faf5] p-6 transition-all hover:shadow-md hover:translate-y-[-5px]">
               <h3 className="text-lg font-semibold text-[#2c5e2e] mb-4">Software Proficiency</h3>
               <ul className="space-y-3 text-[#4a6b4d]">
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>R Statistical Environment</span>
-                </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
                   <span>QGIS & ArcGIS</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Python for Data Analysis</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>MAXENT & Species Distribution Modeling</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
                   <span>Google Earth Engine</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
+                  <span>Microsoft Excel</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
+                  <span>Google Workspace</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
+                  <span>Slack / Discord</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
+                  <span>CapCut</span>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-xl border border-[#e0e7d7] bg-white p-6 transition-all hover:shadow-md hover:translate-y-[-5px]">
+            <div className="rounded-xl border border-[#e0e7d7] bg-[#f8faf5] p-6 transition-all hover:shadow-md hover:translate-y-[-5px]">
               <h3 className="text-lg font-semibold text-[#2c5e2e] mb-4">Ecosystem Expertise</h3>
               <ul className="space-y-3 text-[#4a6b4d]">
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Mangrove Ecosystems</span>
+                  <span>Estuarine Ecosystem</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Coral Reefs</span>
+                  <span>Freshwater Ecosystem</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Tropical Rainforests</span>
+                  <span>Marine Ecosystem</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Wetlands & Peatlands</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Agroforestry Systems</span>
+                  <span>Anthropogenic Ecosystem</span>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-xl border border-[#e0e7d7] bg-white p-6 transition-all hover:shadow-md hover:translate-y-[-5px]">
+            <div className="rounded-xl border border-[#e0e7d7] bg-[#f8faf5] p-6 transition-all hover:shadow-md hover:translate-y-[-5px]">
               <h3 className="text-lg font-semibold text-[#2c5e2e] mb-4">Languages</h3>
               <ul className="space-y-3 text-[#4a6b4d]">
                 <li className="flex items-center gap-2">
@@ -1059,19 +1111,11 @@ export default function Portfolio() {
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>English (Fluent)</span>
+                  <span>English (Proficient)</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
                   <span>Malay (Proficient)</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Japanese (Basic)</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                  <span>Javanese (Conversational)</span>
                 </li>
               </ul>
             </div>
@@ -1084,31 +1128,30 @@ export default function Portfolio() {
         <div className="container">
           <h3 className="text-xl font-semibold text-[#2c5e2e] mb-8 text-center">Collaborator Testimonials</h3>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+          {/* <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto"> */}
+          <div className="flex gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
             <div className="bg-[#f8faf5] p-6 rounded-xl border border-[#e0e7d7]">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
                   <Image
-                    src="/placeholder.svg?height=100&width=100"
-                    alt="Dr. Sarah Chen"
+                    src="/testimonial/alif.jpg?height=100&width=100"
+                    alt="Alif Firdi"
                     width={48}
                     height={48}
                     className="object-cover"
                   />
                 </div>
                 <div>
-                  <h4 className="text-[#2c5e2e] font-medium">Dr. Sarah Chen</h4>
-                  <p className="text-xs text-[#4a6b4d]">National University of Singapore</p>
+                  <h4 className="text-[#2c5e2e] font-medium">Alif Firdi</h4>
+                  <p className="text-xs text-[#4a6b4d]">PT. Darinol Inovasi Indonesia</p>
                 </div>
               </div>
               <p className="text-sm text-[#4a6b4d] italic">
-                "Nurhayatul's methodical approach to mangrove ecosystem research has significantly advanced our
-                understanding of blue carbon dynamics. Her ability to integrate field data with sophisticated modeling
-                techniques sets her apart as a researcher."
+                "Hani's expertise in laboratory techniques and meticulous data curation has been invaluable to our AI-driven plankton research. Her precision in sample collection, classification, and dataset preparation enabled the development of highly accurate machine learning models. Her collaborative spirit and deep understanding of marine biodiversity bridged the gap between ecological fieldwork and computational innovation, making her an indispensable partner in this multidisciplinary project."
               </p>
             </div>
 
-            <div className="bg-[#f8faf5] p-6 rounded-xl border border-[#e0e7d7]">
+            {/* <div className="bg-[#f8faf5] p-6 rounded-xl border border-[#e0e7d7]">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
                   <Image
@@ -1129,9 +1172,9 @@ export default function Portfolio() {
                 attention to detail and innovative thinking have helped us develop novel approaches to reef conservation
                 in the face of climate change."
               </p>
-            </div>
+            </div> */}
 
-            <div className="bg-[#f8faf5] p-6 rounded-xl border border-[#e0e7d7]">
+            {/* <div className="bg-[#f8faf5] p-6 rounded-xl border border-[#e0e7d7]">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
                   <Image
@@ -1152,7 +1195,7 @@ export default function Portfolio() {
                 restoration has provided valuable insights that we've implemented in multiple restoration projects
                 across Indonesia."
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -1200,14 +1243,6 @@ export default function Portfolio() {
                       </div>
                       <span className="text-[#4a6b4d]">Ecosystem restoration and ecological recovery assessment</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <div className="h-5 w-5 rounded-full bg-[#2c5e2e]/10 flex items-center justify-center mt-0.5">
-                        <div className="h-2 w-2 rounded-full bg-[#2c5e2e]"></div>
-                      </div>
-                      <span className="text-[#4a6b4d]">
-                        Integration of traditional ecological knowledge in conservation
-                      </span>
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -1219,7 +1254,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <p className="text-sm text-[#4a6b4d]">Email</p>
-                    <p className="font-medium text-[#2c5e2e]">nurhayatul.hanifah@example.com</p>
+                    <a href="mailto:nurhayatulhanifah1@gmail.com" className="font-medium text-[#2c5e2e]">nurhayatulhanifah1@gmail.com</a>
                   </div>
                 </div>
 
@@ -1229,7 +1264,7 @@ export default function Portfolio() {
                   </div>
                   <div>
                     <p className="text-sm text-[#4a6b4d]">LinkedIn</p>
-                    <p className="font-medium text-[#2c5e2e]">linkedin.com/in/nurhayatul-hanifah</p>
+                    <a href="https://www.linkedin.com/in/nurhayatul-hanifah/" className="font-medium text-[#2c5e2e]">https://www.linkedin.com/in/nurhayatul-hanifah</a>
                   </div>
                 </div>
 
@@ -1245,13 +1280,24 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <form className="space-y-6 rounded-xl bg-white p-8 shadow-sm">
+            <form className="space-y-6 rounded-xl bg-white p-8 shadow-sm"
+            onSubmit={e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = form.name.value;
+    const email = form.email.value;
+    const subject = form.subject.value;
+    const message = form.message.value;
+    const url = `https://docs.google.com/forms/d/e/1FAIpQLSfdrSW_I6P22iHxeEBHSMB8QHSmU2ZyNr0CrSB3N-Fa3RRSRQ/viewform?entry.1806414786=${encodeURIComponent(name)}&entry.1577174129=${encodeURIComponent(email)}&entry.162820519=${encodeURIComponent(subject)}&entry.847912545=${encodeURIComponent(message)}`;
+    window.location.href = url;
+  }}>
               <h3 className="text-lg font-semibold text-[#2c5e2e] mb-4">Send a Message</h3>
               <div className="grid gap-2">
                 <label htmlFor="name" className="text-sm font-medium text-[#4a6b4d]">
                   Name
                 </label>
                 <input
+                name="name"
                   id="name"
                   type="text"
                   className="rounded-md border border-[#e0e7d7] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2c5e2e]/50 transition-all"
@@ -1263,6 +1309,7 @@ export default function Portfolio() {
                   Email
                 </label>
                 <input
+                name="email"
                   id="email"
                   type="email"
                   className="rounded-md border border-[#e0e7d7] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2c5e2e]/50 transition-all"
@@ -1275,6 +1322,7 @@ export default function Portfolio() {
                 </label>
                 <select
                   id="subject"
+                  name="subject"
                   className="rounded-md border border-[#e0e7d7] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2c5e2e]/50 transition-all"
                 >
                   <option value="">Select a subject</option>
@@ -1289,12 +1337,13 @@ export default function Portfolio() {
                   Message
                 </label>
                 <textarea
+                name="message"
                   id="message"
                   className="min-h-[150px] rounded-md border border-[#e0e7d7] bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2c5e2e]/50 transition-all"
                   placeholder="Your message"
                 ></textarea>
               </div>
-              <Button className="w-full bg-[#2c5e2e] hover:bg-[#1f4521] transition-all duration-300">
+              <Button type="submit" className="w-full bg-[#2c5e2e] hover:bg-[#1f4521] transition-all duration-300">
                 Send Message
                 <Mail className="ml-2 h-4 w-4" />
               </Button>
@@ -1310,21 +1359,23 @@ export default function Portfolio() {
             © {new Date().getFullYear()} Nurhayatul Hanifah. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link href="#" className="text-[#4a6b4d] hover:text-[#2c5e2e] transition-colors">
+            <Link href="mailto:nurhayatulhanifah1@gmail.com" className="text-[#4a6b4d] hover:text-[#2c5e2e] transition-colors">
               <Mail className="h-5 w-5" />
               <span className="sr-only">Email</span>
             </Link>
-            <Link href="#" className="text-[#4a6b4d] hover:text-[#2c5e2e] transition-colors">
+            <Link href="https://www.linkedin.com/in/nurhayatul-hanifah/" className="text-[#4a6b4d] hover:text-[#2c5e2e] transition-colors">
               <Linkedin className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
-            <Link href="#" className="text-[#4a6b4d] hover:text-[#2c5e2e] transition-colors">
+            <Link href="https://www.researchgate.net/profile/Nurhayatul-Hanifah" className="text-[#4a6b4d] hover:text-[#2c5e2e] transition-colors">
               <Landmark className="h-5 w-5" />
               <span className="sr-only">ResearchGate</span>
             </Link>
           </div>
         </div>
       </footer>
+
+      <ProjectDetailModal item={selectedProject} isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </div>
   )
 }
