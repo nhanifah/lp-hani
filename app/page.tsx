@@ -401,7 +401,7 @@ export default function Portfolio() {
                         location: "Padang, West Sumatra, Indonesia",
                         description: "A fieldwork activity focused on environmental data collection and research. Field data collection includes physicochemical parameters such as temperature, salinity, pH, brightness, BOD₅, DO, free CO₂, TSS, phosphate, and nitrate.",
                         category: "Ecosystem Analysis",
-                        tags: ["Carbon Cycling", "Remote Sensing", "Climate Change"]
+                        tags: ["Environment Field Sampling", "Water Quality Analysis", "Ecological Data Collection"]
                       })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />
@@ -458,7 +458,7 @@ export default function Portfolio() {
                         location: "Padang, West Sumatra, Indonesia",
                         description: "The discovery of 25 phytoplankton species in the coastal waters of Padang, West Sumatra, that have the potential to cause Harmful Algal Blooms (HABs) represents a crucial step in understanding the dynamics and ecological impacts of HABs. By providing detailed insights into species composition and bloom behavior, this study supports sustainable marine management and the development of early warning strategies for environmental protection.",
                         category: "Marine Ecology",
-                        tags: ["Resilience", "Marine Conservation", "Biodiversity"]
+                        tags: ["Harmful Algal Blooms (HABs)", "Phytoplankton Monitoring", "Coastal Water Ecology"]
                       })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />
@@ -517,7 +517,7 @@ export default function Portfolio() {
                         location: "Padang, West Sumatra, Indonesia",
                         description: "Harnessing the power of Quantum GIS (QGIS) to create dynamic heatmaps for environmental analysis—visualizing and revealing the complex spatial patterns of biodiversity. This innovative approach offers deeper insights into the distribution of harmful algal bloom (HAB) species, paving the way for smarter ecological monitoring and management.",
                         category: "Digital Mapping",
-                        tags: ["Reforestation", "Succession", "Ecosystem Services"]
+                        tags: ["QGIS Heatmap", "Spatial Analysis", "Biodiversity Mapping"]
                       })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />
@@ -574,7 +574,7 @@ export default function Portfolio() {
                         location: "Padang, West Sumatra, Indonesia",
                         description: "As part of the biodiversity identification process in the laboratory, I conducted plankton species analysis using a microscope. This activity aimed to observe and classify morphological characteristics of each species, serving as a scientific basis for assessing aquatic ecosystem conditions and supporting accurate environmental monitoring efforts.",
                         category: "Restoration Ecology",
-                        tags: ["Reforestation", "Succession", "Ecosystem Services"]
+                        tags: ["Plankton Identification", "Microscopic Analysis", "Aquatic Ecosystem Monitoring"]
                       })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />
@@ -631,7 +631,7 @@ export default function Portfolio() {
                         location: "Tangerang, Indonesia",
                         description: "Managed educational programs in Learning and Development through active supervision and teamwork. Analyzed learning outcomes and mentor performance to drive improvement and ensure customer satisfaction. Maintained clear communication to support smooth program execution and a positive learning experience.",
                         category: "Learning and Development",
-                        tags: ["Reforestation", "Succession", "Ecosystem Services"]
+                        tags: ["Program Management", "Learning Evaluation", "Coordination"]
                       })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />
@@ -675,7 +675,7 @@ export default function Portfolio() {
                 <Card className="overflow-hidden border-[#e0e7d7] transition-all hover:shadow-lg group">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src="/porto/porto_6.png?height=300&width=500"
+                      src="/porto/porto_7.png?height=300&width=500"
                       alt="Reforestation Project"
                       fill
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
@@ -686,9 +686,9 @@ export default function Portfolio() {
                         title: "Video Editor",
                         date: "2025-Present",
                         location: "Jakarta, Indonesia",
-                        description: "Oversee the production of educational and promotional videos, including editing visuals, audio, and animations. I ensure the content effectively supports learning goals and marketing strategies. My work focuses on creating engaging videos that educate and captivate audiences.",
+                        description: `Oversee the production of educational and promotional videos, including editing visuals, audio, and animations. I ensure the content effectively supports learning goals and marketing strategies. My work focuses on creating engaging videos that educate and captivate audiences.\n\nView portfolio result: <a href="https://s.id/videoprojecthani" target="_blank" rel="noopener noreferrer" class="text-[#2c5e2e] underline">Google Drive</a>`,
                         category: "Creative",
-                        tags: ["Reforestation", "Succession", "Ecosystem Services"]
+                        tags: ["Video Editing", "Educational Content", "Visual Storytelling"]
                       })}>
                         View Details
                         <ExternalLink className="ml-2 h-3 w-3" />

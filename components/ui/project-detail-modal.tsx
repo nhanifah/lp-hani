@@ -102,7 +102,14 @@ const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ item, isOpen, o
             </div>
             
             <div className="mt-4 flex-grow">
-              <p className="text-gray-700 whitespace-pre-line">{item.fullDescription || item.description}</p>
+              {item.fullDescription || (item.description && /<[^>]+>/.test(item.description)) ? (
+                <div
+                  className="text-gray-700 whitespace-pre-line"
+                  dangerouslySetInnerHTML={{ __html: item.fullDescription || item.description || '' }}
+                />
+              ) : (
+                <p className="text-gray-700 whitespace-pre-line">{item.description}</p>
+              )}
             </div>
             
             {(item.externalLink || item.downloadLink) && (
