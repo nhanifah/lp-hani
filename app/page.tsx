@@ -419,13 +419,13 @@ export default function Portfolio() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Carbon Cycling
+                        Environment Field Sampling
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Remote Sensing
+                        Water Quality Analysis
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Climate Change
+                        Ecological Data Collection
                       </Badge>
                     </div>
                   </CardContent>
@@ -478,13 +478,13 @@ export default function Portfolio() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Resilience
+                        Harmful Algal Blooms (HABs)
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Marine Conservation
+                        Phytoplankton Monitoring
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Biodiversity
+                        Coastal Water Ecology
                       </Badge>
                     </div>
                   </CardContent>
@@ -535,13 +535,13 @@ export default function Portfolio() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Reforestation
+                        QGIS Heatmap
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Succession
+                        Spatial Analysis
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Ecosystem Services
+                        Biodiversity Mapping
                       </Badge>
                     </div>
                   </CardContent>
@@ -588,17 +588,17 @@ export default function Portfolio() {
                     </div>
                     <h3 className="text-xl font-semibold text-[#2c5e2e] mb-2">Biodiversity Identification Process</h3>
                     <p className="text-sm text-[#4a6b4d] mb-4">
-                      As part of the biodiversity identification process in the laboratory, I conducted plankton species analysis using a microscope. This activity aimed to observe and classify morphological characteristics of each species, serving as a scientific basis for assessing aquatic ecosystem conditions and supporting accurate environmental monitoring efforts."
+                      As part of the biodiversity identification process in the laboratory, I conducted plankton species analysis using a microscope. This activity aimed to observe and classify morphological characteristics of each species, serving as a scientific basis for assessing aquatic ecosystem conditions and supporting accurate environmental monitoring efforts.
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Reforestation
+                        Plankton Identification
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Succession
+                        Microscopic Analysis
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Ecosystem Services
+                        Aquatic Ecosystem Monitoring
                       </Badge>
                     </div>
                   </CardContent>
@@ -649,13 +649,13 @@ export default function Portfolio() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Reforestation
+                        Program Management
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Succession
+                        Learning Evaluation
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Ecosystem Services
+                        Coordination
                       </Badge>
                     </div>
                   </CardContent>
@@ -682,7 +682,7 @@ export default function Portfolio() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
-                        imageUrl: "/porto/porto_6.png",
+                        imageUrl: "/porto/porto_7.png",
                         title: "Video Editor",
                         date: "2025-Present",
                         location: "Jakarta, Indonesia",
@@ -706,13 +706,13 @@ export default function Portfolio() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Reforestation
+                        Video Editing
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Succession
+                        Educational Content
                       </Badge>
                       <Badge variant="outline" className="text-xs bg-transparent border-[#2c5e2e]/30 text-[#4a6b4d]">
-                        Ecosystem Services
+                        Visual Storytelling
                       </Badge>
                     </div>
                   </CardContent>
