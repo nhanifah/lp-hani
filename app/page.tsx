@@ -142,7 +142,7 @@ export default function Portfolio() {
           }}
         >
           <Image
-            src="/bg.jpg?height=1080&width=1920"
+            src="/bg.webp?height=1080&width=1920"
             alt="Nature pattern"
             fill
             className="object-cover"
@@ -238,7 +238,7 @@ export default function Portfolio() {
               <div className="space-y-8">
                 <div className="relative aspect-square overflow-hidden rounded-xl border-4 border-[#e0e7d7] shadow-lg transform transition-all duration-500 hover:scale-[1.02] hover:shadow-xl">
                   <Image
-                    src="/hani.jpg?height=400&width=400"
+                    src="/hani.webp?height=400&width=400"
                     alt="Nurhayatul Hanifah"
                     fill
                     className="object-cover"
@@ -388,14 +388,14 @@ export default function Portfolio() {
                 <Card className="overflow-hidden border-[#e0e7d7] transition-all hover:shadow-lg group">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src="/porto/porto_1.jpeg?height=300&width=500"
+                      src="/porto/porto_1.webp?height=300&width=500"
                       alt="Ecosystem Analysis"
                       fill
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
-                        imageUrl: "/porto/porto_1.jpeg",
+                        imageUrl: "/porto/porto_1.webp",
                         title: "Field Survey, Sampling, and Data Collection",
                         date: "2020-2023",
                         location: "Padang, West Sumatra, Indonesia",
@@ -445,14 +445,14 @@ export default function Portfolio() {
                 <Card className="overflow-hidden border-[#e0e7d7] transition-all hover:shadow-lg group">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src="/porto/porto_2.png?height=300&width=500"
+                      src="/porto/porto_2.webp?height=300&width=500"
                       alt="Coral Reef Monitoring"
                       fill
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
-                        imageUrl: "/porto/porto_2.png",
+                        imageUrl: "/porto/porto_2.webp",
                         title: "Harmful Algal Blooms (HABs) Species",
                         date: "2021-Present",
                         location: "Padang, West Sumatra, Indonesia",
@@ -504,14 +504,14 @@ export default function Portfolio() {
                 <Card className="overflow-hidden border-[#e0e7d7] transition-all hover:shadow-lg group">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src="/porto/porto_3.jpeg?height=300&width=500"
+                      src="/porto/porto_3.webp?height=300&width=500"
                       alt="Reforestation Project"
                       fill
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
-                        imageUrl: "/porto/porto_3.jpeg",
+                        imageUrl: "/porto/porto_3.webp",
                         title: "Spatial Distribution Heatmap",
                         date: "2019-2022",
                         location: "Padang, West Sumatra, Indonesia",
@@ -561,14 +561,14 @@ export default function Portfolio() {
                 <Card className="overflow-hidden border-[#e0e7d7] transition-all hover:shadow-lg group">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src="/porto/porto_4.jpeg?height=300&width=500"
+                      src="/porto/porto_4.webp?height=300&width=500"
                       alt="Reforestation Project"
                       fill
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
-                        imageUrl: "/porto/porto_4.jpeg",
+                        imageUrl: "/porto/porto_4.webp",
                         title: "Biodiversity Identification Process",
                         date: "2019-2023",
                         location: "Padang, West Sumatra, Indonesia",
@@ -618,14 +618,14 @@ export default function Portfolio() {
                 <Card className="overflow-hidden border-[#e0e7d7] transition-all hover:shadow-lg group">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src="/porto/porto_5.jpeg?height=300&width=500"
+                      src="/porto/porto_5.webp?height=300&width=500"
                       alt="Reforestation Project"
                       fill
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
-                        imageUrl: "/porto/porto_5.jpeg",
+                        imageUrl: "/porto/porto_5.webp",
                         title: "Student Success Intern",
                         date: "2024-2025",
                         location: "Tangerang, Indonesia",
@@ -675,14 +675,14 @@ export default function Portfolio() {
                 <Card className="overflow-hidden border-[#e0e7d7] transition-all hover:shadow-lg group">
                   <div className="aspect-video relative overflow-hidden">
                     <Image
-                      src="/porto/porto_7.png?height=300&width=500"
+                      src="/porto/porto_7.webp?height=300&width=500"
                       alt="Reforestation Project"
                       fill
                       className="object-cover transition-transform group-hover:scale-105 duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <Button variant="secondary" size="sm" className="bg-white/90 hover:bg-white" onClick={() => handleViewDetails({
-                        imageUrl: "/porto/porto_7.png",
+                        imageUrl: "/porto/porto_7.webp",
                         title: "Video Editor",
                         date: "2025-Present",
                         location: "Jakarta, Indonesia",
@@ -1134,7 +1134,7 @@ export default function Portfolio() {
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
                   <Image
-                    src="/testimonial/alif.jpg?height=100&width=100"
+                    src="/testimonial/alif.webp?height=100&width=100"
                     alt="Alif Firdi"
                     width={48}
                     height={48}
