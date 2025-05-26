@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Head from "next/head"
+import Script from "next/script"
 
 export const metadata: Metadata = {
   title: 'Nurhayatul Hanifah - Biodiversity Researcher',
@@ -33,21 +33,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
+        {/* Metadata dan tag lain jika perlu */}
+      </head>
+      <body suppressHydrationWarning>
         {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH72BBNN1T"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-LH72BBNN1T');
-            `,
-          }}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LH72BBNN1T"
+          strategy="afterInteractive"
         />
-      </Head>
-      <body suppressHydrationWarning>{children}</body>
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LH72BBNN1T');
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   )
 }
