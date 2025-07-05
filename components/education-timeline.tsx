@@ -82,8 +82,8 @@ export function EducationTimeline() {
         category: "Career",
       },
       {
-        title: "Help Desk Officer SDM at PT Bank Central Asia Tbk",
-        description: "HR Help Desk Officer at BCA is the first point of contact, providing swift HR support and solutions to all employees for smooth operations and employee satisfaction.",
+        title: "Help Desk Officer SDM",
+        description: "HR Help Desk Officer at PT Bank Central Asia Tbk (BCA) is the first point of contact, providing swift HR support and solutions to all employees for smooth operations and employee satisfaction.",
         category: "Career",
       },
     ],

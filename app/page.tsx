@@ -299,17 +299,17 @@ export default function Portfolio() {
                   <AccordionItem value="item-1">
                     <AccordionTrigger className="text-[#2c5e2e] font-medium">Current Focus</AccordionTrigger>
                     <AccordionContent className="text-[#4a6b4d]">
-                      <p>My primary focus is currently my role as an <strong>HR Help Desk Officer at Halo SDM</strong>. I serve as the first point of contact for all employees of PT Bank Central Asia Tbk, responsible for answering questions and resolving issues related to various HR aspects, including:</p>
-                      <ul>
+                      <p className="mb-3">My primary focus is currently my role as an <strong>HR Help Desk Officer at Halo SDM</strong>. I serve as the initial point of contact for all employees of PT Bank Central Asia Tbk, dedicated to answering questions and resolving issues across various HR aspects. This includes, but isn't limited to:</p>
+                      <ul className="list-disc pl-5 mb-3 space-y-1"> {/* Added list-disc, pl-5 for indent, mb-3 for spacing below, space-y-1 for spacing between list items */}
                           <li><strong>Leave administration</strong> and attendance.</li>
                           <li>Inquiries about <strong>BPJS Kesehatan and Ketenagakerjaan</strong> (Health and Employment Social Security).</li>
                           <li>Salary, allowances, and other benefits information.</li>
                           <li>Internal company HR policies and procedures.</li>
                       </ul>
-                      <p>My goal is to provide prompt, accurate, and empathetic support, ensuring smooth HR operations and enhancing employee satisfaction at BCA through responsive service.</p>
-                      <p>Previously, I was actively involved in <strong>Learning and Development (L&D)</strong>, where I managed the implementation and monitoring of educational programs, coordinated with stakeholders, and ensured high-quality customer engagement. This experience equipped me with strong communication and problem-solving skills, highly relevant to my current role.</p>
-                      <p>In parallel, I also have experience supporting biodiversity assessments and environmental analysis projects, particularly within land-based ecosystems such as palm oil plantations. My previous work involved managing project documentation, coordinating field logistics, and contributing to ecological data collection and analysis. These efforts supported sustainability initiatives and environmental compliance. Additionally, I utilized tools such as <strong>Quantum GIS</strong> and environmental monitoring methods to assist in conservation-related activities.</p>
-                      <p>This career transition demonstrates my adaptability in managing diverse project types and my commitment to delivering positive impact, now with a focus on employee service and support.</p>
+                      <p className="mb-3">My main goal is to provide prompt, accurate, and empathetic support. This ensures smooth HR operations and significantly enhances employee satisfaction at BCA through responsive service.</p>
+                      <p className="mb-3">Before this, I was actively involved in <strong>Learning and Development (L&D)</strong>. In that role, I managed the implementation and monitoring of educational programs, coordinated with various stakeholders, and ensured high-quality customer engagement. This experience was crucial in equipping me with strong communication and problem-solving skills, which are highly relevant to my current position.</p>
+                      <p className="mb-3">In parallel, I also have experience supporting biodiversity assessments and environmental analysis projects, particularly within land-based ecosystems like palm oil plantations. My previous work involved managing project documentation, coordinating field logistics, and contributing to ecological data collection and analysis. These efforts were vital in supporting sustainability initiatives and environmental compliance. Additionally, I'm proficient in using tools such as <strong>Quantum GIS</strong> and applying environmental monitoring methods to assist in conservation-related activities.</p>
+                      <p>Ultimately, this career transition highlights my adaptability in managing diverse project types and my strong commitment to delivering positive impact, now with a dedicated focus on employee service and support.</p>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="item-2">
