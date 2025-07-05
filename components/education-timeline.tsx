@@ -81,6 +81,11 @@ export function EducationTimeline() {
         description: "Student Success intern at PT Indobit Digital Raya (Bitlabs Academy)",
         category: "Career",
       },
+      {
+        title: "Help Desk Officer SDM at PT Bank Central Asia Tbk",
+        description: "HR Help Desk Officer at BCA is the first point of contact, providing swift HR support and solutions to all employees for smooth operations and employee satisfaction.",
+        category: "Career",
+      },
     ],
   }
 
